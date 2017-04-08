@@ -11,7 +11,8 @@
             <ColumnDefinition Width="575*"/>
             <ColumnDefinition Width="225*"/>
         </Grid.ColumnDefinitions>
-        <ListView x:Name="ListBox_PlayerList" HorizontalAlignment="Left" Height="300" Margin="50,50,0,0" VerticalAlignment="Top" Width="500">
+        <ListView x:Name="ListView_Players" HorizontalAlignment="Left" Height="300" Margin="50,50,0,0" VerticalAlignment="Top" Width="500"
+                  GridViewColumnHeader.Click="GridViewColumnHeaderClickedHandler">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="ID" DisplayMemberBinding="{Binding ID_Col}"/>

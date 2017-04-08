@@ -31,12 +31,12 @@ namespace MyGolfApp01
 
         public delegate void ProcessRecordHandler(SqlDataReader record);
 
-        public static void ProcessRecord(ProcessRecordHandler recordHandler)
+        public static void ProcessRecord(ProcessRecordHandler recordHandler, string additional_info ="")
         {
             string SelectAllQuery = 
                 "SELECT [ID],[Surname],[Firstname],[Title],[Gender],[DOB],[Street]" +
                 ",[Suburb],[City],[Available week days],[Handicap]" +
-                "FROM[dbo].[golf]";
+                "FROM[dbo].[golf]" + additional_info;
 
             using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
