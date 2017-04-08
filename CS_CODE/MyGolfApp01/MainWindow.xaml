@@ -11,7 +11,7 @@
             <ColumnDefinition Width="575*"/>
             <ColumnDefinition Width="225*"/>
         </Grid.ColumnDefinitions>
-        <ListView x:Name="ListView_Players" HorizontalAlignment="Left" Height="300" Margin="50,50,0,0" VerticalAlignment="Top" Width="500"
+        <ListView x:Name="ListView_Players" HorizontalAlignment="Left" Height="300" Margin="10,10,0,0" VerticalAlignment="Top" Width="500"
                   GridViewColumnHeader.Click="GridViewColumnHeaderClickedHandler">
             <ListView.View>
                 <GridView>
@@ -23,5 +23,24 @@
                 </GridView>
             </ListView.View>
         </ListView>
+        <Grid HorizontalAlignment="Left" Height="120" Margin="10,320,0,0" VerticalAlignment="Top" Width="400">
+            <Label Content="ID" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Height="25" Margin="0,0,0,0" VerticalAlignment="Top" Width="35"/>
+            <Label Content="Title" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="25" Margin="35,0,0,0" VerticalAlignment="Top" Width="40"/>
+            <Label Content="First Name" HorizontalAlignment="Left" Height="25" Margin="75,0,0,0" VerticalAlignment="Top" Width="100"/>
+            <Label Content="Surname" HorizontalAlignment="Left" Height="25" Margin="175,0,0,0" VerticalAlignment="Top" Width="100"/>
+            <Label Content="Gender" HorizontalAlignment="Left" Height="25" Margin="275,0,0,0" VerticalAlignment="Top" Width="55"/>
+            <Label Content="Handicap" HorizontalAlignment="Left" Height="25" Margin="265,0,0,0" VerticalAlignment="Top" Width="65"/>
+     
+            <Label Content="DOB" HorizontalAlignment="Left" Height="25" Margin="0,69,0,0" VerticalAlignment="Top" Width="35"/>
+            <Label Content="Street" HorizontalAlignment="Left" Height="25" Margin="50,69,0,0" VerticalAlignment="Top" Width="100"/>
+            <Label Content="Suburb" HorizontalAlignment="Left" Height="25" Margin="160,69,0,0" VerticalAlignment="Top" Width="50"/>
+            <Label Content="City" HorizontalAlignment="Left" Height="25" Margin="210,69,0,0" VerticalAlignment="Top" Width="50"/>
+            <Label Content="Available" HorizontalAlignment="Left" Height="25" Margin="265,69,0,0" VerticalAlignment="Top" Width="65"/>
+
+            <TextBox x:Name="txtID" TextAlignment="Right" HorizontalAlignment="Left" Height="25" Margin="0,25,0,0" TextWrapping="Wrap" Text="000" VerticalAlignment="Top" Width="35"/>
+            <TextBox x:Name="txtTitle" TextAlignment="Center" HorizontalAlignment="Left" Height="25" Margin="35,25,0,0" TextWrapping="Wrap" Text="Miss" VerticalAlignment="Top" Width="40"/>
+            <TextBox x:Name="txtFirstName" HorizontalAlignment="Left" Height="25" Margin="75,25,0,0" TextWrapping="Wrap" Text="First Name" VerticalAlignment="Top" Width="100"/>
+            <TextBox x:Name="txtSurName" HorizontalAlignment="Left" Height="25" Margin="175,25,0,0" TextWrapping="Wrap" Text="SurName" VerticalAlignment="Top" Width="100"/>
+        </Grid>
     </Grid>
 </Window>

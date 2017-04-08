@@ -83,7 +83,7 @@ namespace MyGolfApp01
                         case "DOB": SQL += GOLFDB.DOB; break;
                         case "First Name": SQL += GOLFDB.FirstName + "+" + GOLFDB.SurName; break;
                         case "Last Name": SQL += GOLFDB.SurName + "+" + GOLFDB.FirstName; break;
-                        case "Title": SQL += GOLFDB.Title;break;
+                        case "Title": SQL += GOLFDB.Title; break;
                     }
 
                     SQL += " " + (direction == ListSortDirection.Ascending ? "ASC" : "DESC");
