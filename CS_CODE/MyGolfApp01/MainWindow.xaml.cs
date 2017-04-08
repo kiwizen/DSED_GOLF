@@ -23,6 +23,7 @@ namespace MyGolfApp01
         public MainWindow()
         {
             InitializeComponent();
+            WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
         }
     }
 }
