@@ -11,4 +11,4 @@ SELECT [ID]
       ,[Available week days]
       ,[Handicap]
   FROM [dbo].[golf]
-  ORDER BY [DOB]
+  ORDER BY [Firstname] + ' ' + [Surname]  DESC
