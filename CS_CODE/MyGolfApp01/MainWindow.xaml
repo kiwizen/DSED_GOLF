@@ -11,7 +11,16 @@
             <ColumnDefinition Width="575*"/>
             <ColumnDefinition Width="225*"/>
         </Grid.ColumnDefinitions>
-        <ListBox x:Name="ListBox_PlayerList" HorizontalAlignment="Left" Height="300" Margin="50,50,0,0" VerticalAlignment="Top" Width="500"/>
-
+        <ListView x:Name="ListBox_PlayerList" HorizontalAlignment="Left" Height="300" Margin="50,50,0,0" VerticalAlignment="Top" Width="500">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="ID" DisplayMemberBinding="{Binding ID_Col}"/>
+                    <GridViewColumn Header="Title" DisplayMemberBinding="{Binding Title_Col}"/>
+                    <GridViewColumn Header="First Name" DisplayMemberBinding="{Binding FName_Col}"/>
+                    <GridViewColumn Header="Last Name" DisplayMemberBinding="{Binding LName_Col}"/>
+                    <GridViewColumn Header="DOB" DisplayMemberBinding="{Binding DOB_Col}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
     </Grid>
 </Window>
