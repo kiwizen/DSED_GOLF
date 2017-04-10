@@ -5,14 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MyGolfApp01"
         mc:Ignorable="d"
-        Title="MainWindow" Height="640" Width="800">
+        Title="MainWindow" Height="640" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="575*"/>
-            <ColumnDefinition Width="225*"/>
-        </Grid.ColumnDefinitions>
-        <ListView x:Name="ListView_Players" HorizontalAlignment="Left" Height="300" Margin="10,10,0,0" VerticalAlignment="Top" Width="500"
-                  GridViewColumnHeader.Click="GridViewColumnHeaderClickedHandler">
+
+        <ListView x:Name="ListView_Players" HorizontalAlignment="Left" Height="300" Margin="10,10,0,0" VerticalAlignment="Top" Width="750"
+                  GridViewColumnHeader.Click="GridViewColumnHeaderClickedHandler"
+                  MouseDoubleClick="GridViewRowClickHander">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="ID" DisplayMemberBinding="{Binding ID_Col}"/>
@@ -20,27 +18,43 @@
                     <GridViewColumn Header="First Name" DisplayMemberBinding="{Binding FName_Col}"/>
                     <GridViewColumn Header="Last Name" DisplayMemberBinding="{Binding LName_Col}"/>
                     <GridViewColumn Header="DOB" DisplayMemberBinding="{Binding DOB_Col}"/>
+                    <GridViewColumn Header="Gender" DisplayMemberBinding="{Binding Gender_Col}"/>
+                    <GridViewColumn Header="Handicap" DisplayMemberBinding="{Binding Handicap_Col}"/>
+                    <GridViewColumn Header="Street" DisplayMemberBinding="{Binding Street_Col}"/>
+                    <GridViewColumn Header="Suburb" DisplayMemberBinding="{Binding Suburb_Col}"/>
+                    <GridViewColumn Header="City" DisplayMemberBinding="{Binding City_Col}"/>
+                    <GridViewColumn Header="Available" DisplayMemberBinding="{Binding Available_Col}"/>
                 </GridView>
             </ListView.View>
         </ListView>
-        <Grid HorizontalAlignment="Left" Height="120" Margin="10,320,0,0" VerticalAlignment="Top" Width="400">
+        <Grid HorizontalAlignment="Left" Height="120" Margin="10,320,0,0" VerticalAlignment="Top" Width="400"
+              >
             <Label Content="ID" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Height="25" Margin="0,0,0,0" VerticalAlignment="Top" Width="35"/>
             <Label Content="Title" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="25" Margin="35,0,0,0" VerticalAlignment="Top" Width="40"/>
             <Label Content="First Name" HorizontalAlignment="Left" Height="25" Margin="75,0,0,0" VerticalAlignment="Top" Width="100"/>
             <Label Content="Surname" HorizontalAlignment="Left" Height="25" Margin="175,0,0,0" VerticalAlignment="Top" Width="100"/>
-            <Label Content="Gender" HorizontalAlignment="Left" Height="25" Margin="275,0,0,0" VerticalAlignment="Top" Width="55"/>
-            <Label Content="Handicap" HorizontalAlignment="Left" Height="25" Margin="265,0,0,0" VerticalAlignment="Top" Width="65"/>
-     
-            <Label Content="DOB" HorizontalAlignment="Left" Height="25" Margin="0,69,0,0" VerticalAlignment="Top" Width="35"/>
-            <Label Content="Street" HorizontalAlignment="Left" Height="25" Margin="50,69,0,0" VerticalAlignment="Top" Width="100"/>
-            <Label Content="Suburb" HorizontalAlignment="Left" Height="25" Margin="160,69,0,0" VerticalAlignment="Top" Width="50"/>
-            <Label Content="City" HorizontalAlignment="Left" Height="25" Margin="210,69,0,0" VerticalAlignment="Top" Width="50"/>
-            <Label Content="Available" HorizontalAlignment="Left" Height="25" Margin="265,69,0,0" VerticalAlignment="Top" Width="65"/>
+            <Label Content="Gender" HorizontalAlignment="Left" Height="25" Margin="275,0,0,0" VerticalAlignment="Top" Width="50"/>
+            <Label Content="Handicap" HorizontalAlignment="Left" Height="25" Margin="325,0,0,0" VerticalAlignment="Top" Width="65"/>
 
-            <TextBox x:Name="txtID" TextAlignment="Right" HorizontalAlignment="Left" Height="25" Margin="0,25,0,0" TextWrapping="Wrap" Text="000" VerticalAlignment="Top" Width="35"/>
-            <TextBox x:Name="txtTitle" TextAlignment="Center" HorizontalAlignment="Left" Height="25" Margin="35,25,0,0" TextWrapping="Wrap" Text="Miss" VerticalAlignment="Top" Width="40"/>
-            <TextBox x:Name="txtFirstName" HorizontalAlignment="Left" Height="25" Margin="75,25,0,0" TextWrapping="Wrap" Text="First Name" VerticalAlignment="Top" Width="100"/>
-            <TextBox x:Name="txtSurName" HorizontalAlignment="Left" Height="25" Margin="175,25,0,0" TextWrapping="Wrap" Text="SurName" VerticalAlignment="Top" Width="100"/>
+            <Label Content="DOB" HorizontalAlignment="Left" Height="25" Margin="0,50,0,0" VerticalAlignment="Top" Width="70"/>
+            <Label Content="Street" HorizontalAlignment="Left" Height="25" Margin="70,50,0,0" VerticalAlignment="Top" Width="155"/>
+            <Label Content="Suburb" HorizontalAlignment="Left" Height="25" Margin="225,50,0,0" VerticalAlignment="Top" Width="50"/>
+            <Label Content="City" HorizontalAlignment="Left" Height="25" Margin="275,50,0,0" VerticalAlignment="Top" Width="50"/>
+            <Label Content="Available" HorizontalAlignment="Left" Height="25" Margin="325,50,0,0" VerticalAlignment="Top" Width="65"/>
+
+            <TextBox x:Name="txtID" TextAlignment="Right" HorizontalAlignment="Left" Height="25" Margin="0,25,0,0" VerticalAlignment="Top" Width="35" IsEnabled="False"/>
+            <TextBox x:Name="txtTitle" TextAlignment="Center" HorizontalAlignment="Left" Height="25" Margin="35,25,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="40"/>
+            <TextBox x:Name="txtFirstName" HorizontalAlignment="Left" Height="25" Margin="75,25,0,0" VerticalAlignment="Top" Width="100"/>
+            <TextBox x:Name="txtSurName" HorizontalAlignment="Left" Height="25" Margin="175,25,0,0" VerticalAlignment="Top" Width="100"/>
+            <TextBox x:Name="txtGender" TextAlignment="Center" HorizontalAlignment="Left" Height="25" Margin="275,25,0,0" VerticalAlignment="Top" Width="50"/>
+            <TextBox x:Name="txtHandicap" TextAlignment="Center" HorizontalAlignment="Left" Height="25" Margin="325,25,0,0" VerticalAlignment="Top" Width="65"/>
+
+            <TextBox x:Name="txtDOB" TextAlignment="Center" HorizontalAlignment="Left" Height="25" Margin="0,75,0,0" VerticalAlignment="Top" Width="70"/>
+            <TextBox x:Name="txtStreet" HorizontalAlignment="Left" Height="25" Margin="70,75,0,0" VerticalAlignment="Top" Width="155"/>
+            <TextBox x:Name="txtSuburb" HorizontalAlignment="Left" Height="25" Margin="225,75,0,0" VerticalAlignment="Top" Width="50"/>
+            <TextBox x:Name="txtCity" HorizontalAlignment="Left" Height="25" Margin="275,75,0,0" VerticalAlignment="Top" Width="50"/>
+            <TextBox x:Name="txtAvailable" HorizontalAlignment="Left" Height="25" Margin="325,75,0,0" VerticalAlignment="Top" Width="65"/>
+
         </Grid>
     </Grid>
 </Window>

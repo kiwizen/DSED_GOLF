@@ -39,9 +39,13 @@ namespace MyGolfApp01
                 Title_Col = record[GOLFDB.Title].ToString(),
                 FName_Col = record[GOLFDB.FirstName].ToString(),
                 LName_Col = record[GOLFDB.SurName].ToString(),
-                DOB_Col = record.GetDateTime(record.GetOrdinal(GOLFDB.DOB)).ToString("d", culture)
-
-                
+                DOB_Col = record.GetDateTime(record.GetOrdinal(GOLFDB.DOB)).ToString("d", culture),
+                Gender_Col = record[GOLFDB.Gender].ToString(),
+                Handicap_Col = record[GOLFDB.Handicap].ToString(),
+                Street_Col = record[GOLFDB.Street].ToString(),
+                Suburb_Col = record[GOLFDB.Suburb].ToString(),
+                City_Col = record[GOLFDB.City].ToString(),
+                Available_Col = record[GOLFDB.Availiable_Week_Days].ToString()
             });
 
         }
@@ -80,10 +84,17 @@ namespace MyGolfApp01
                     switch(header)
                     {
                         case "ID": SQL += GOLFDB.ID; break;
-                        case "DOB": SQL += GOLFDB.DOB; break;
+                        case "Title": SQL += GOLFDB.Title; break;
+                        
                         case "First Name": SQL += GOLFDB.FirstName + "+" + GOLFDB.SurName; break;
                         case "Last Name": SQL += GOLFDB.SurName + "+" + GOLFDB.FirstName; break;
-                        case "Title": SQL += GOLFDB.Title; break;
+                        case "Gender": SQL += GOLFDB.Gender; break;
+                        case "Handicap": SQL += GOLFDB.Handicap; break;
+                        case "DOB": SQL += GOLFDB.DOB; break;
+                        case "Street": SQL += GOLFDB.Street; break;
+                        case "Suburb": SQL += GOLFDB.Suburb; break;
+                        case "City": SQL += GOLFDB.City; break;
+                        case "Available": SQL +=  "[" + GOLFDB.Availiable_Week_Days + "]"; break;
                     }
 
                     SQL += " " + (direction == ListSortDirection.Ascending ? "ASC" : "DESC");
@@ -93,6 +104,23 @@ namespace MyGolfApp01
                     _lastDirection = direction;
                 }
             }
+        }
+
+        private void GridViewRowClickHander(object sender, MouseButtonEventArgs e)
+        {
+            int i = ListView_Players.SelectedIndex;
+            dynamic item = ListView_Players.Items[i];
+            txtID.Text = item.ID_Col;
+            txtTitle.Text = item.Title_Col;
+            txtFirstName.Text = item.FName_Col;
+            txtSurName.Text = item.LName_Col;
+            txtGender.Text = item.Gender_Col;
+            txtHandicap.Text = item.Handicap_Col;
+            txtDOB.Text = item.DOB_Col;
+            txtStreet.Text = item.Street_Col;
+            txtSuburb.Text = item.Suburb_Col;
+            txtCity.Text = item.City_Col;
+            txtAvailable.Text = item.Available_Col;
         }
     }
 }

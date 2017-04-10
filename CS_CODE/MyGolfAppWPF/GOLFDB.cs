@@ -18,7 +18,7 @@ namespace MyGolfApp01
         public static string Gender { get => "Gender"; }
         public static string DOB { get => "DOB";  }
         public static string Street { get => "Street"; }
-        public static string Suburb { get => "Suburd"; }
+        public static string Suburb { get => "Suburb"; }
         public static string City { get => "City"; }
         public static string Availiable_Week_Days { get => "Available week days"; }
         public static string Handicap { get => "Handicap"; }
@@ -46,13 +46,10 @@ namespace MyGolfApp01
                     using (SqlCommand command = new SqlCommand(SelectAllQuery,connection))
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
-                        Dictionary<string, string> dict_Record =
-                                        new Dictionary<string, string>();
-                        while (reader.Read())
-                        {
+                        while (reader.Read())                     
                             if (recordHandler != null)
                                 recordHandler(reader);
-                        }
+                        
                     }
                     connection.Close();
                 }
